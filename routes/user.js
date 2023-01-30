@@ -1,7 +1,7 @@
 // Filename : user.js
 
 const express = require("express");
-const { check, validationResult } = require("express-validator/check");
+// const { check, validationResult } = require("express-validator/check");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
@@ -26,13 +26,13 @@ router.post(
     })
   ],
   async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: errors.array()
-      });
-    }
-
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({
+    //     errors: errors.array()
+    //   });
+    // }
+    console.log('reached here -->')
     const {
       username,
       email,
@@ -94,13 +94,13 @@ router.post(
     })
   ],
   async (req, res) => {
-    const errors = validationResult(req);
+    // const errors = validationResult(req);
 
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: errors.array()
-      });
-    }
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({
+    //     errors: errors.array()
+    //   });
+    // }
 
     const { email, password } = req.body;
     try {
